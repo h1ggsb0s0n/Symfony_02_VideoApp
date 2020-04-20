@@ -1,0 +1,22 @@
+{
+  "name": "symfony_02_videoapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h1ggsb0s0n/Symfony_02_VideoApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/h1ggsb0s0n/Symfony_02_VideoApp/issues"
+  },
+  "homepage": "https://github.com/h1ggsb0s0n/Symfony_02_VideoApp#readme",
+  "devDependencies": {
+    "@symfony/webpack-encore": "^0.29.1"
+  }
+}
