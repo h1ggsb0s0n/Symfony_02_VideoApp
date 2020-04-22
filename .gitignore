@@ -8,3 +8,7 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+
+###< NPM ###
+/node_modules
+###< NPM  ###
