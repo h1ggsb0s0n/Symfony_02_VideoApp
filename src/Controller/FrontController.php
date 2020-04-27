@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Category;
+use App\Utils\CategoryTreeFrontPage;
 
 class FrontController extends AbstractController
 {
@@ -16,10 +18,11 @@ class FrontController extends AbstractController
     }
     
     /**
-     * @Route("/video-list", name="video_list")
+     * @Route("/video-list/category/{categoryname},{id}", name="video_list")
      */
-    public function videoList()
+    public function videoList($id, CategoryTreeFrontPage $categories)//this is a service -> symfony is going to create an instance of this class automatically
     {
+        dump($categories);
         return $this->render('front/video_list.html.twig');
     }
     
@@ -62,6 +65,18 @@ class FrontController extends AbstractController
     {
         return $this->render('front/login.html.twig');
     }
+    
+    
+    public function mainCategories(){
+        $categories = $this->getDoctrine()
+        ->getRepository(Category::class)
+        ->findBy(['parent' => null], ['name'=>'ASC']);
+        
+        return $this->render('front/_main_categories.html.twig', [
+            'categories' => $categories,
+        ]);
+    }
+    
     
     
     
