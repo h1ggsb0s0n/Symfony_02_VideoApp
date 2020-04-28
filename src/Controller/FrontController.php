@@ -20,12 +20,13 @@ class FrontController extends AbstractController
     /**
      * @Route("/video-list/category/{categoryname},{id}", name="video_list")
      */
-    public function videoList($id, CategoryTreeFrontPage $categories)//this is a service -> symfony is going to create an instance of this class automatically
+    public function videoList($id, CategoryTreeFrontPage $categories)
     {
-        dump($categories);
-        return $this->render('front/video_list.html.twig');
+        $subcategories = $categories->buildTree($id);
+        return $this->render('front/video_list.html.twig',[
+            'subcategories' => $categories->getCategoryList($subcategories)
+        ]);
     }
-    
     /**
      * @Route("/video-details", name="video_details")
      */
