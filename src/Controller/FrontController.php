@@ -23,7 +23,6 @@ class FrontController extends AbstractController
     public function videoList($id, CategoryTreeFrontPage $categories)
     {
         $categories->getCategoryListAndParent($id);
-        dump($categories);
         return $this->render('front/video_list.html.twig',[
             'subcategories' => $categories
         ]);
@@ -66,6 +65,14 @@ class FrontController extends AbstractController
     public function login()
     {
         return $this->render('front/login.html.twig');
+    }
+    
+    /**
+     * @Route("/payment", name="payment")
+     */
+    public function payment()
+    {
+        return $this->render('front/payment.html.twig');
     }
     
     
