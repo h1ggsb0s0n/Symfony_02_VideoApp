@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/h1ggsb0s0n/Symfony_02_VideoApp#readme",
   "devDependencies": {
-    "@symfony/webpack-encore": "^0.29.1"
+    "@symfony/webpack-encore": "^4.1.2"
   }
 }
